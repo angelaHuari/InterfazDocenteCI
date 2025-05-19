@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Control - Docente</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Panel Docente</h1>
+    <nav class="navbar">
+      <div class="nav-container">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="nav-links">
+          <li><a href="home.html">Inicio</a></li>
+          <li><a href="index.html">Ver Grupos</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <header class="header">
+      <h2>Panel de Control - Ver Grupos</h2>
+    </header>
+    <section class="info-personal">
+      <h3>Información Personal</h3>
+      <div class="info-grid">
+        <div>
+          <p><span>Nombre completo:</span> Juan Pérez García</p>
+          <p><span>DNI:</span> 12345678</p>
+          <p><span>Sexo:</span> Masculino</p>
+          <p><span>Fecha de nacimiento:</span> 1990-01-01</p>
+        </div>
+        <div>
+          <p><span>Email institucional:</span> jperez@idiomas.edu</p>
+          <p><span>Celular:</span> 987654321</p>
+          <img src="images/docente.png" alt="Foto del docente" class="docente-foto">
+        </div>
+      </div>
+    </section>
+
+    <section class="grupos-asignados">
+      <h3>Mis Grupos Asignados</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Periodo</th>
+            <th>Modalidad</th>
+            <th>Horario</th>
+            <th>Estudiantes</th>
+            <th>Vacantes</th>
+            <th>Ciclo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-I</td>
+            <td>Presencial</td>
+            <td>Lun-Mie 8am-10am</td>
+            <td>25</td>
+            <td>5</td>
+            <td>Básico</td>
+            <td><button class="btn btn-ver-detalles">Ver Detalles</button></td>
+          </tr>
+          <tr>
+            <td>2025-I</td>
+            <td>Virtual</td>
+            <td>Sab 2pm-6pm</td>
+            <td>20</td>
+            <td>10</td>
+            <td>Intermedio</td>
+            <td><button class="btn btn-ver-detalles">Ver Detalles</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <script src="script.js"></script>
+  </main>
+</body>
+</html>

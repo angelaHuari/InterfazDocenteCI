@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalles del Grupo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Panel Docente</h1>
+        <nav class="navbar">
+          <div class="nav-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+              <li><a href="home.html">Inicio</a></li>
+              <li><a href="index.html">Ver Grupos</a></li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <header class="header">
+            <h2>Detalles del Grupo</h2>
+        </header>
+        <section>
+            <h3>Información del Grupo</h3>
+            <p><strong>Ciclo:</strong> <span id="ciclo"></span></p>
+            <p><strong>Nivel:</strong> <span id="nivel"></span></p>
+            <p><strong>Modalidad:</strong> <span id="modalidad"></span></p>
+            <p><strong>Horario:</strong> <span id="horario"></span></p>
+        </section>
+
+        <section class="grupos-asignados">
+            <h3>Estudiantes Matriculados</h3>
+            <table id="tabla-estudiantes">
+                <thead>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JS rellenará esto -->
+                </tbody>
+            </table>
+        </section>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <button class="btn" onclick="generarPDF()">Generar Reporte PDF</button>
+        </div>
+  </main>
+
+  <script>
+    function generarPDF() {
+      alert("Simulando generación de PDF...");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const grupo = JSON.parse(localStorage.getItem("grupoSeleccionado"));
+      if (!grupo) return;
+
+      document.getElementById("ciclo").textContent = grupo.ciclo;
+      document.getElementById("nivel").textContent = grupo.nivel;
+      document.getElementById("modalidad").textContent = grupo.modalidad;
+      document.getElementById("horario").textContent = grupo.horario;
+
+      const tbody = document.querySelector("#tabla-estudiantes tbody");
+      grupo.estudiantes.forEach(est => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${est.nombres}</td>
+          <td>${est.apellidos}</td>
+          <td>${est.email}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
+  </script>
+</body>
+</html>
